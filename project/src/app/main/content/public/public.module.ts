@@ -4,10 +4,11 @@ import {RouterModule, Routes} from "@angular/router";
 
 const publicRoutes: Routes = [
   {
-    path: '',
+    path: 'home',
     component: HomeComponent,
   }
-]
+];
+
 @NgModule({
   declarations: [
     HomeComponent

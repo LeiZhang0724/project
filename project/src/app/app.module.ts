@@ -4,11 +4,17 @@ import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
 import {MainModule} from "./main/main.module";
 import {RouterModule, Routes} from "@angular/router";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {SharedModule} from "./main/content/shared/shared.module";
 
 const appRoutes: Routes = [
   {
-    path: 'home',
+    path: '',
     loadChildren: './main/content/public/public.module#PublicModule'
+  },
+  {
+    path: '',
+    loadChildren: './main/content/protected/protected.module#ProtectedModule'
   }
 ];
 
@@ -18,7 +24,9 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     MainModule,
+    SharedModule,
     RouterModule.forRoot(
       appRoutes,
       {
